@@ -82,15 +82,6 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="yourUsername" class="form-label">Ім'я користувача</label>
-                                        <div class="input-group has-validation">
-                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                            <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                            <div class="invalid-feedback">Будь-ласка, введіть ім'я користувача.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
                                         <label for="yourPassword" class="form-label">Пароль</label>
                                         <input type="password" name="password" class="form-control" id="yourPassword" required>
                                         <div class="invalid-feedback">Будь-ласка, введіть пароль!</div>
