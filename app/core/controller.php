@@ -6,7 +6,7 @@
 class Controller
 {
 	
-	public function view($view,$data = [])
+	public function view($view,$data = array())
 	{
 
 		extract($data);
