@@ -67,35 +67,35 @@
                                 <form method="post" class="row g-3 needs-validation" novalidate>
                                     <div class="col-6">
                                         <label for="yourName" class="form-label">Ваше ім'я</label>
-                                        <input type="text" name="firstname" class="form-control" id="yourName1" required>
+                                        <input value="<?= set_value('firstname')?>" type="text" name="firstname" class="form-control" id="yourName1" required1>
                                         <div class="invalid-feedback">Будь-ласка, введіть ім'я!</div>
                                     </div>
                                     <div class="col-6">
-                                        <label for="yourName" class="form-label">Ваше прізвище</label>
-                                        <input type="text" name="lastname" class="form-control" id="yourName2" required>
+                                        <label for="yourName2" class="form-label">Ваше прізвище</label>
+                                        <input value="<?= set_value('lastname')?>" type="text" name="lastname" class="form-control" id="yourName2" required1>
                                         <div class="invalid-feedback">Будь-ласка, введіть прізвище!</div>
                                     </div>
                                     <div class="col-12">
                                         <label for="yourEmail" class="form-label">Електронна пошта</label>
-                                        <input type="email" name="email" class="form-control" id="yourEmail" required>
+                                        <input value="<?= set_value('email')?>" type="email" name="email" class="form-control" id="yourEmail" required1>
                                         <div class="invalid-feedback">Будь-ласка, введіть вашу електронну пошту!</div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="yourPassword" class="form-label">Пароль</label>
-                                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                                        <input value="<?= set_value('password')?>" type="password" name="password" class="form-control" id="yourPassword" required1>
                                         <div class="invalid-feedback">Будь-ласка, введіть пароль!</div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="yourPassword" class="form-label">Підтвердіть ароль</label>
-                                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                                        <input value="<?= set_value('retype_password')?>" type="password" name="retype_password" class="form-control" id="yourPassword" required1>
                                         <div class="invalid-feedback">Будь-ласка, введіть підтвердіть пароль!</div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                                            <input <?= set_value('terms') ? 'checked' : ''; ?> class="form-check-input" name="terms" type="checkbox" value="1" id="acceptTerms" required1>
                                             <label class="form-check-label" for="acceptTerms">Я погоджуюся та приймаю <a href="#">умови та положення</a></label>
                                             <div class="invalid-feedback">Ви повинні погодитися перед відправкою.</div>
                                         </div>

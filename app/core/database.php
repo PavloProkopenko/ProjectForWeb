@@ -12,7 +12,7 @@ class Database
         return new PDO($str, 'root', '');
     }
 
-    public function query($query, $data = array(), $type = 'object')
+    public function query($query, $data = [], $type = 'object')
     {
         $con = $this->connect();
 
