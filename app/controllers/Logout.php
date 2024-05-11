@@ -5,13 +5,13 @@
  */
 class Logout extends Controller
 {
-	
-	public function index()
-	{
 
-		Auth::logout();
+    public function index()
+    {
 
-        redirect('login');
-	}
-	
+        Auth::logout();
+
+        redirect('home');
+    }
+
 }
