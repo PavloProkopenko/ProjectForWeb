@@ -303,16 +303,16 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link " href="<?=ROOT?>/admin/profile">
-                <i class="bi bi-person"></i>
-                <span>Профіль</span>
+            <a class="nav-link " href="<?=ROOT?>/admin/sales">
+                <i class="bi bi-cash-coin"></i>
+                <span>Продажі</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link " href="<?=ROOT?>/admin/sales">
-                <i class="bi bi-cash-coin"></i>
-                <span>Продажі</span>
+            <a class="nav-link " href="<?=ROOT?>/admin/profile">
+                <i class="bi bi-person"></i>
+                <span>Профіль</span>
             </a>
         </li>
 
