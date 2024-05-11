@@ -1,14 +1,16 @@
 <?php
 
 /**
- * user model
+ * users model
  */
-class User
+class User extends Model
 {
-    protected $errors = [];
+
+    public $errors = [];
     protected $table = "users";
 
     protected $allowedColumns = [
+
         'email',
         'firstname',
         'lastname',
@@ -16,9 +18,11 @@ class User
         'role',
         'date',
     ];
+
     public function validate($data)
     {
         $this->errors = [];
+
         if(empty($data['firstname']))
         {
             $this->errors['firstname'] = "A first name is required";
@@ -29,10 +33,15 @@ class User
             $this->errors['lastname'] = "A last name is required";
         }
 
-        if(empty($data['email']))
+        //check email
+        if(!filter_var($data['email'],FILTER_VALIDATE_EMAIL))
         {
-            $this->errors['email'] = "A email is required";
-        }
+            $this->errors['email'] = "Email is not valid";
+        }else
+            if($this->where(['email'=>$data['email']]))
+            {
+                $this->errors['email'] = "That email already exists";
+            }
 
         if(empty($data['password']))
         {
@@ -41,7 +50,7 @@ class User
 
         if($data['password'] !== $data['retype_password'])
         {
-            $this->errors['password'] = "Password do not match";
+            $this->errors['password'] = "Passwords do not match";
         }
 
         if(empty($data['terms']))
@@ -57,27 +66,6 @@ class User
         return false;
     }
 
-    public function insert($data)
-    {
-        // remove unwanted columns
-        if(!empty($this->allowedColumns))
-        {
-            foreach ($data as $key => $value)
-            {
-                if(!in_array($key, $this->allowedColumns))
-                {
-                    unset($data[$key]);
-                }
-            }
-        }
 
-        $keys = array_keys($data);
 
-        $query = "insert into users ";
-        $query .= "(".implode(",", $keys) .") values (:".implode(",:", $keys) .")";
-
-        $db = new Database();
-        $db->query($query, $data);
-
-    }
 }

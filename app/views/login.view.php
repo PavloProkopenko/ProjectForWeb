@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+    <title>Увійти - <?=APP_NAME?></title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -64,20 +64,30 @@
                                     <p class="text-center small">Введіть своє ім'я користувача та пароль для входу</p>
                                 </div>
 
-                                <form class="row g-3 needs-validation" novalidate>
+                                <?php if(message()):?>
+                                    <div class="alert alert-danger text-center"><?=message('',true)?></div>
+                                <?php endif;?>
+
+                                <?php if(!empty($errors['email'])):?>
+                                    <div class="alert alert-danger text-center"><?=$errors['email']?></div>
+                                <?php endif;?>
+
+
+                                <form method="post" class="row g-3 needs-validation" novalidate>
 
                                     <div class="col-12">
-                                        <label for="yourUsername" class="form-label">Ім'я користувача</label>
+                                        <label for="yourUsername" class="form-label">Електронна пошта</label>
                                         <div class="input-group has-validation">
-                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                            <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                            <div class="invalid-feedback">Будь ласка, введіть своє ім'я користувача.</div>
+                                            <input value="<?= set_value('email')?>" type="text" name="email" class="form-control" id="yourUsername" required>
+                                            <div class="invalid-feedback">Будь ласка, введіть свою електронну пошту.</div>
                                         </div>
                                     </div>
 
+
+
                                     <div class="col-12">
                                         <label for="yourPassword" class="form-label">Пароль</label>
-                                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                                        <input value="<?= set_value('password')?>" type="password" name="password" class="form-control" id="yourPassword" required>
                                         <div class="invalid-feedback">Будь ласка, введіть свій пароль!</div>
                                     </div>
 
