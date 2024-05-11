@@ -1,4 +1,4 @@
-<main id="main">
+
 
 <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
@@ -14,24 +14,8 @@
             <ul>
                 <li><a href="<?=ROOT?>">Blog</a></li>
                 <li><a href="single-post">Single Post</a></li>
-                <li class="dropdown"><a href="category"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <li><a href="search-result">Search Result</a></li>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
+
+
 
                 <li><a href="<?=ROOT?>/about">Про нас</a></li>
                 <li><a href="<?=ROOT?>/contact">Контакти</a></li>
@@ -40,11 +24,20 @@
                     <li><a href="<?=ROOT?>/login">Увійти</a></li>
                     <li><a href="<?=ROOT?>/signup">Зареєструватись</a></li>
                 <?php else:?>
-                    <li><a href="<?=ROOT?>/logout">Вийти</a></li>
+                    <li class="dropdown"><a href="category"><span> Вітаємо, <?=Auth::getFirstname()?></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="<?=ROOT?>/admin">Dashboard</a></li>
+                            <li><a href="#">Профіль</a></li>
+                            <li><a href="#">Налаштування</a></li>
+                            <li><a href="<?=ROOT?>/logout">Вийти</a></li>
+                        </ul>
+                    </li>
                 <?php endif;?>
             </ul>
         </nav><!-- .navbar -->
+        <div>
 
+        </div>
         <div class="position-relative">
             <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
             <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
@@ -67,3 +60,5 @@
     </div>
 
 </header><!-- End Header -->
+
+<main id="main">
