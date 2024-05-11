@@ -255,9 +255,9 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="<?=ROOT?>/logout">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span>Вихід</span>
                         </a>
                     </li>
 
@@ -279,12 +279,26 @@
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
-        </li><!-- End Dashboard Nav -->
+        </li>
 
         <li class="nav-item">
             <a class="nav-link " href="<?=ROOT?>/admin/courses">
                 <i class="bi bi-camera-reels"></i>
-                <span>Курси</span>
+                <span>Мої курси</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="<?=ROOT?>/admin/lessons">
+                <i class="bi bi-person-video3"></i>
+                <span>Зараховані курси</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="<?=ROOT?>/admin/courses">
+                <i class="bi bi-hourglass-split"></i>
+                <span>Історія перегляду</span>
             </a>
         </li>
 
@@ -292,6 +306,13 @@
             <a class="nav-link " href="<?=ROOT?>/admin/profile">
                 <i class="bi bi-person"></i>
                 <span>Профіль</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="<?=ROOT?>/admin/sales">
+                <i class="bi bi-cash-coin"></i>
+                <span>Продажі</span>
             </a>
         </li>
 
