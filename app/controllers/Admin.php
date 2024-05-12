@@ -56,6 +56,9 @@ class Admin extends Controller
                         move_uploaded_file($_FILES['image']['tmp_name'], $destination);
 
                         $_POST['image'] = $destination;
+                        if(file_exists($row->image)){
+                            unlink($row->image);
+                        }
                     }else {
                         $user->errors['image'] = "Даний тип файлу заборонений";
                     }
