@@ -36,6 +36,33 @@ class Admin extends Controller
 
         if($_SERVER['REQUEST_METHOD'] == "POST" && $row)
         {
+            $folder = "uploads/images/";
+            if(!file_exists($folder))
+            {
+                mkdir($folder, 0777, true);
+            }
+            file_put_contents($folder."index.php", "<?php //silence");
+            file_put_contents("uploads/index.php","<?php //silence");
+            $allowed = ['image/jpeg', 'image/png'];
+
+            if (!empty($_FILES['image']['name']))
+            {
+                if($_FILES['image']['errors'] == 0)
+                {
+                    if(in_array($_FILES['image']['type'], $allowed))
+                    {
+                        // everything good
+                        $destination = $folder.time().$_FILES['image']['name'];
+                        move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+
+                        $_POST['image'] = $destination;
+                    }else {
+                        $user->errors['image'] = "Даний тип файлу заборонений";
+                    }
+                } else {
+                    $user->errors['image'] = "Неможливо завантажити фото";
+                }
+            }
             $user->update($id, $_POST);
 
             redirect('admin/profile/'.$id);
